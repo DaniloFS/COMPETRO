@@ -1,0 +1,11 @@
+DISTRIBUIDORA XSA
+
+	Uma distribuidora XSA nos contratou para desenvolver o sistema COMPETRO. Um sitema para gerenciar suas vendas 
+de combustiveis foceis. 
+	Neste sistema deve conter um Cadastro de Clientes ( onde sera cadastrado seus clientes e tambem se necessario 
+atualizaçao de cadastro ), Fornecedores ( onde sera cadastrados seus fornecedores ), Cadastro de Produtos ( onde sera
+cadastrados todos os produtos para venda ), Usuarios do Sistema (onde sera cadastrados os usuarios do sistema com login
+e senha ), Controle de Estoque ( onde sera feito toda a gerencia do estoque ), Fluxo caixa ( onde sera gerenciado todo
+o movimento do caixa ).O sistema tambem registrarar as vendas, compras e emitirar relatorios.
+
+
