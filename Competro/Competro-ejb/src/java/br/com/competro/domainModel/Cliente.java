@@ -20,10 +20,10 @@ public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column (name = "nomes")
     private String nome;
-    
+
     @Column (name = "cpfs")
     private String cpf;
 
@@ -85,5 +85,5 @@ public class Cliente implements Serializable {
     public String toString() {
         return "br.com.competro.domainModel.Cliente[ id=" + id + " ]";
     }
-    
+
 }
