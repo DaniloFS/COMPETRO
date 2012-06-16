@@ -7,6 +7,7 @@ package br.com.competro.dataAccess;
 import br.com.competro.domainModel.Cliente;
 import br.com.competro.domainModel.ClienteRepository;
 import java.util.List;
+import javax.persistence.Query;
 
 /**
  *
@@ -18,8 +19,9 @@ public class ClienteDAO extends DAOGenerico<Cliente> implements ClienteRepositor
         super(Class.class);
     }
     @Override
-    public List<Cliente> listarClientesPorNome() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<Cliente> listarClientesPorNome(String nome) {
+        Query sql = (Query) maneger.createQuery("SELECT c FROM Cliente c where c.nome like '%"+nome+"%' order by c.nome");
+        return sql.getResultList();
     }
     
 }

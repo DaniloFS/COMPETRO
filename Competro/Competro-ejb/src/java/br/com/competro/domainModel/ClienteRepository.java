@@ -11,6 +11,6 @@ import java.util.List;
  * @author Hugo Santos
  */
 public interface ClienteRepository extends Repository<Cliente> {
-    List<Cliente> listarClientesPorNome();
+    List<Cliente> listarClientesPorNome(String n);
     
 }
