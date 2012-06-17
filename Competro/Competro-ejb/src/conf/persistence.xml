@@ -2,10 +2,17 @@
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
   <persistence-unit name="Competro-ejbPU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <jta-data-source>hugo</jta-data-source>
+    <jta-data-source>Competro</jta-data-source>
+    <class>br.com.competro.domainModel.Cliente</class>
+    <class>br.com.competro.domainModel.Compra</class>
+    <class>br.com.competro.domainModel.Endereco</class>
+    <class>br.com.competro.domainModel.Fornecedor</class>
+    <class>br.com.competro.domainModel.Produto</class>
+    <class>br.com.competro.domainModel.Usuario</class>
+    <class>br.com.competro.domainModel.Venda</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
     </properties>
   </persistence-unit>
 </persistence>

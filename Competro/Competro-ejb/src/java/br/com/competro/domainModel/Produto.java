@@ -14,17 +14,17 @@ import javax.persistence.Table;
  * @author Ary
  */
 @Entity
-@Table (name = "produto")
+@Table (name = "produtos")
 public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column (name = "descricoes")
+    @Column (name = "descricao")
     private String descricao;
     
-    @Column (name = "valoresUnitario")
+    @Column (name = "valorUnitario")
     private float valorUnitario;
 
     public Long getId() {

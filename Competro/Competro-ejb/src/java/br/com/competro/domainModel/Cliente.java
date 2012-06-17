@@ -14,17 +14,17 @@ import javax.persistence.Table;
  * @author Ary
  */
 @Entity
-@Table (name = "Cliente")
+@Table (name = "Clientes")
 public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "nomes")
+    @Column (name = "nome")
     private String nome;
 
-    @Column (name = "cpfs")
+    @Column (name = "cpf")
     private String cpf;
 
     public Long getId() {

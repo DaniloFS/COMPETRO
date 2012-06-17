@@ -14,21 +14,22 @@ import javax.persistence.Table;
  * @author Ary
  */
 @Entity
-@Table (name = "usuario")
+@Table (name = "usuarios")
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column (name = "nomes")
+    @Column (name = "nome")
     private String nome;
     
-    @Column (name = "logins")
+    @Column (name = "login")
     private String login;
     
-    @Column (name = "senhas")
+    @Column (name = "senha")
     private String senha;
+    
 
     public Long getId() {
         return id;

@@ -5,11 +5,13 @@
 package br.com.competro.domainModel;
 
 import java.util.List;
+import javax.ejb.Remote;
 
 /**
  *
  * @author Hugo Santos
  */
+@Remote
 public interface ClienteRepository extends Repository<Cliente> {
     List<Cliente> listarClientesPorNome(String n);
     

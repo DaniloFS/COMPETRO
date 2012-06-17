@@ -10,19 +10,20 @@ import javax.persistence.*;
  * @author Ary
  */
 @Entity
-@Table (name = "compra")
+@Table (name = "compras")
 public class Compra implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @Column (name = "fornecedores")
+    @ManyToOne
+    @JoinColumn(name = "fornecedor")
+    @Column (name = "fornecedor")
     private Fornecedor fornecedor;
     
     @Temporal(TemporalType.TIMESTAMP)
-    @Column (name = "datas")
+    @Column (name = "data")
     private Date data;
 
     public Long getId() {
