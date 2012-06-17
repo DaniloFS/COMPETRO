@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/Cliente.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/ClienteRepository.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/CompraRepository.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/EnderecoRepository.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/FornecedorRepository.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/ProdutoRepository.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/Repository.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/UsuarioRepository.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/java/br/com/competro/domainModel/VendaRepository.java</file>
+        <file>file:/C:/Documents%20and%20Settings/Ary/Desktop/Jpa-ejb-Jsf/COMPETRO/Competro/Competro-ejb/src/conf/persistence.xml</file>
+    </open-files>
 </project-private>
