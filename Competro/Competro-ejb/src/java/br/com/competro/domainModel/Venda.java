@@ -19,7 +19,7 @@ public class Venda implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "cliente")
-    @Column (name = "cliente")
+    //@Column (name = "cliente")
     private Cliente cliente;
     
     @Temporal(TemporalType.TIMESTAMP)

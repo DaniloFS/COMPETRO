@@ -7,11 +7,13 @@ package br.com.competro.dataAccess;
 import br.com.competro.domainModel.Endereco;
 import br.com.competro.domainModel.EnderecoRepository;
 import java.util.List;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author Hugo Santos
  */
+@Stateless
 public class EnderecoDAO extends DAOGenerico<Endereco> implements EnderecoRepository{
 
     public EnderecoDAO(){

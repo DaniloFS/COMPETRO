@@ -7,11 +7,13 @@ package br.com.competro.dataAccess;
 import br.com.competro.domainModel.Usuario;
 import br.com.competro.domainModel.UsuarioRepository;
 import java.util.List;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author Hugo Santos
  */
+@Stateless
 public class UsuarioDAO extends DAOGenerico<Usuario> implements UsuarioRepository {
 
     public UsuarioDAO(){

@@ -7,11 +7,13 @@ package br.com.competro.dataAccess;
 import br.com.competro.domainModel.Venda;
 import br.com.competro.domainModel.VendaRepository;
 import java.util.List;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author Hugo Santos
  */
+@Stateless
 public class CompraDAO extends DAOGenerico<Venda> implements VendaRepository {
 
     public CompraDAO(){

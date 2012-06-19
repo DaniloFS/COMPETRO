@@ -7,11 +7,13 @@ package br.com.competro.dataAccess;
 import br.com.competro.domainModel.Produto;
 import br.com.competro.domainModel.ProdutoRepository;
 import java.util.List;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author Hugo Santos
  */
+@Stateless
 public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepository {
 
     public ProdutoDAO(){

@@ -19,7 +19,7 @@ public class Compra implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "fornecedor")
-    @Column (name = "fornecedor")
+    //@Column (name = "fornecedor")
     private Fornecedor fornecedor;
     
     @Temporal(TemporalType.TIMESTAMP)

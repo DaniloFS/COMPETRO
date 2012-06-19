@@ -7,13 +7,16 @@ package br.com.competro.dataAccess;
 import br.com.competro.domainModel.Cliente;
 import br.com.competro.domainModel.ClienteRepository;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.Query;
 
 /**
  *
- * @author Hugo Santos
+ * @author Ary
  */
+@Stateless
 public class ClienteDAO extends DAOGenerico<Cliente> implements ClienteRepository {
+
 
     public ClienteDAO(){
         super(Class.class);

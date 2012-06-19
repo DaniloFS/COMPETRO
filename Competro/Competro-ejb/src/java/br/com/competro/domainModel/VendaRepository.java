@@ -7,6 +7,7 @@ package br.com.competro.domainModel;
 import java.util.List;
 import javax.ejb.Remote;
 
+
 /**
  *
  * @author Hugo Santos

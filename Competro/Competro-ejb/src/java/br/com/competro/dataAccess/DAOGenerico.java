@@ -2,14 +2,19 @@ package br.com.competro.dataAccess;
 
 import br.com.competro.domainModel.Repository;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * @author Danilo
+ * @author Ary
  * @author Hugo Santos
  */
 public class DAOGenerico<T> implements Repository<T> {
+
+    public DAOGenerico() {
+    }
     
     public DAOGenerico(Class tip){
         tipo=tip;
