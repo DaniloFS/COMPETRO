@@ -10,15 +10,16 @@ import javax.persistence.*;
  * @author Ary
  */
 @Entity
-@Table (name = "Vendas")
+@Table (name="Vendas")
 public class Venda implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne
-    @JoinColumn(name = "cliente")
+    @ManyToOne(cascade= CascadeType.PERSIST,targetEntity=Cliente.class)
+    @JoinColumn(name="cliente",referencedColumnName="id")
     //@Column (name = "cliente")
     private Cliente cliente;
     

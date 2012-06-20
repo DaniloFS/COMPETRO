@@ -17,13 +17,13 @@ public class Compra implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne
-    @JoinColumn(name = "fornecedor")
+    @JoinColumn(name ="fornecedor",referencedColumnName="id")
+    @ManyToOne(cascade= CascadeType.PERSIST,targetEntity=Fornecedor.class)
     //@Column (name = "fornecedor")
     private Fornecedor fornecedor;
     
     @Temporal(TemporalType.TIMESTAMP)
-    @Column (name = "data")
+    @Column (name="data")
     private Date data;
 
     public Long getId() {

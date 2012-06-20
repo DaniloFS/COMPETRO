@@ -4,8 +4,8 @@
  */
 package br.com.competro.dataAccess;
 
-import br.com.competro.domainModel.Venda;
-import br.com.competro.domainModel.VendaRepository;
+import br.com.competro.domainModel.Compra;
+import br.com.competro.domainModel.CompraRepository;
 import java.util.List;
 import javax.ejb.Stateless;
 
@@ -14,13 +14,13 @@ import javax.ejb.Stateless;
  * @author Hugo Santos
  */
 @Stateless
-public class CompraDAO extends DAOGenerico<Venda> implements VendaRepository {
+public class CompraDAO extends DAOGenerico<Compra> implements CompraRepository {
 
     public CompraDAO(){
         super(Class.class);
     }
     @Override
-    public List<Venda> listaVendasPorMes() {
+    public List<Compra> listarCompra() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     

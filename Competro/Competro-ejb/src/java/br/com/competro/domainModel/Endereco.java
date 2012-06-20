@@ -14,26 +14,26 @@ import javax.persistence.Table;
  * @author Ary
  */
 @Entity
-@Table (name = "enderecos")
+@Table(name="enderecos")
 public class Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column (name = "rua")
+    @Column(name="rua")
     private String rua;
     
-    @Column (name = "numero")
+    @Column(name="numero")
     private String numero;
     
-    @Column (name = "bairro")
+    @Column(name="bairro")
     private String bairro;
     
-    @Column (name = "cidade")
+    @Column (name="cidade")
     private String cidade;
     
-    @Column (name = "cep")
+    @Column(name="cep")
     private String cep;
 
     public Long getId() {
