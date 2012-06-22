@@ -476,8 +476,14 @@ exists or setup the property manually. For example like this:
             </condition>
         </fail>
     </target>
-    <target depends="init" if="no.dist.ear.dir" name="-deps-module-jar" unless="no.deps"/>
-    <target depends="init" if="dist.ear.dir" name="-deps-ear-jar" unless="no.deps"/>
+    <target depends="init" if="no.dist.ear.dir" name="-deps-module-jar" unless="no.deps">
+        <ant antfile="${project.Competro-ejb}/build.xml" inheritall="false" target="dist"/>
+    </target>
+    <target depends="init" if="dist.ear.dir" name="-deps-ear-jar" unless="no.deps">
+        <ant antfile="${project.Competro-ejb}/build.xml" inheritall="false" target="dist-ear">
+            <property location="${build.dir}" name="dist.ear.dir"/>
+        </ant>
+    </target>
     <target depends="init, -check-main-class, -deps-module-jar, -deps-ear-jar" name="deps-jar"/>
     <target depends="init,deps-jar" name="-pre-pre-compile">
         <mkdir dir="${classes.dir}"/>
@@ -487,10 +493,17 @@ exists or setup the property manually. For example like this:
         <!-- You can override this target in the ../build.xml file. -->
     </target>
     <target depends="compile" if="is.server.weblogic" name="library-inclusion-in-archive">
-        <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update"/>
+        <basename file="${reference.Competro-ejb.dist}" property="manifest.reference.Competro-ejb.dist"/>
+        <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update">
+            <attribute name="Extension-List" value="jar-1 "/>
+            <attribute name="jar-1-Extension-Name" value="${manifest.reference.Competro-ejb.dist}"/>
+        </manifest>
     </target>
     <target depends="compile" if="dist.ear.dir" name="library-inclusion-in-manifest">
-        <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update"/>
+        <copyfiles files="${reference.Competro-ejb.dist}" manifestproperty="manifest.reference.Competro-ejb.dist" todir="${dist.ear.dir}"/>
+        <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update">
+            <attribute name="Class-Path" value="${manifest.reference.Competro-ejb.dist} "/>
+        </manifest>
     </target>
     <target name="-copy-meta-inf">
         <copy todir="${classes.dir}">
@@ -987,7 +1000,9 @@ exists or setup the property manually. For example like this:
                 CLEANUP SECTION
                 ===============
             -->
-    <target depends="init" name="deps-clean" unless="no.deps"/>
+    <target depends="init" name="deps-clean" unless="no.deps">
+        <ant antfile="${project.Competro-ejb}/build.xml" inheritall="false" target="clean"/>
+    </target>
     <target depends="init" name="-do-clean">
         <delete dir="${build.dir}"/>
         <delete dir="${dist.dir}"/>
