@@ -1,12 +1,8 @@
 package br.com.competro.domainModel;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+import javax.persistence.*;
 
 /**
  * @author Danilo
@@ -26,6 +22,12 @@ public class Produto implements Serializable {
     
     @Column (name="valorUnitario")
     private float valorUnitario;
+    
+    @ManyToMany (cascade= CascadeType.ALL)
+    List<Venda> venda;
+    
+    @ManyToMany (cascade= CascadeType.ALL)
+    List<Compra> compra;
 
     public Long getId() {
         return id;

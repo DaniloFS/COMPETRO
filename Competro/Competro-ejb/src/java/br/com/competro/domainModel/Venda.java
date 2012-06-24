@@ -2,6 +2,7 @@ package br.com.competro.domainModel;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -26,6 +27,9 @@ public class Venda implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column (name = "data")
     private Date data;
+    
+    @ManyToMany (cascade= CascadeType.ALL)
+    List<Produto> produto;
 
     public Long getId() {
         return id;

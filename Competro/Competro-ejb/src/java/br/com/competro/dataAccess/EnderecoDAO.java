@@ -8,6 +8,7 @@ import br.com.competro.domainModel.Endereco;
 import br.com.competro.domainModel.EnderecoRepository;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.persistence.Query;
 
 /**
  *
@@ -21,12 +22,14 @@ public class EnderecoDAO extends DAOGenerico<Endereco> implements EnderecoReposi
     }
     @Override
     public List<Endereco> listarEnderecoCliente() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Query sql = (Query) maneger.createQuery("SELECT e FROM Endereco e join Cliente c ");
+        return sql.getResultList();        
     }
 
     @Override
     public List<Endereco> listarEnderecoFornecedor() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Query sql = (Query) maneger.createQuery("SELECT e FROM Endereco e join Fornecedor c ");
+        return sql.getResultList();
     }
     
 }

@@ -8,6 +8,7 @@ import br.com.competro.domainModel.Compra;
 import br.com.competro.domainModel.CompraRepository;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.persistence.Query;
 
 /**
  *
@@ -21,7 +22,9 @@ public class CompraDAO extends DAOGenerico<Compra> implements CompraRepository {
     }
     @Override
     public List<Compra> listarCompra() {
-        throw new UnsupportedOperationException("Not supported yet.");
+                        
+        Query sql = (Query) maneger.createQuery("SELECT c FROM Compra c order by c.data");
+        return sql.getResultList();
     }
     
 }
