@@ -9,7 +9,7 @@ import br.com.competro.domainModel.ClienteRepository;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.Query;
-
+ 
 /**
  *
  * @author Ary

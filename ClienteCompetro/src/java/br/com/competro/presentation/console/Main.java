@@ -22,13 +22,13 @@ public class Main {
     public static void main(String[] args) {
         try {
             Context context = new InitialContext();
-            ClienteRepository clienteEjb = (ClienteRepository) context.lookup("java:global/ClienteCompetro/Competro-ejbPU/ClienteDAO");
-            ProdutoRepository produtoEjb =(ProdutoRepository) context.lookup("java:global/ClienteCompetro/Competro-ejbPU/ProdutoDAO");
-            FornecedorRepository fornecedorEjb = (FornecedorRepository) context.lookup("java:global/ClienteCompetro/Competro-ejbPU/FornecedorDAO");
-            CompraRepository compraEjb = (CompraRepository) context.lookup("java:global/ClienteCompetro/Competro-ejbPU/CompraDAO");
-            VendaRepository vendaEjb = (VendaRepository) context.lookup("java:global/ClienteCompetro/Competro-ejbPU/CompraDAO");
-            UsuarioRepository usuarioEjb = (UsuarioRepository) context.lookup("java:global/ClienteCompetro/Competro-ejbPU/UsuarioDAO");
-            EnderecoRepository enderecoEjb = (EnderecoRepository) context.lookup("java:global/ClienteCompetro/Competro-ejbPU/EnderecoDAO");
+            ClienteRepository clienteEjb = (ClienteRepository) context.lookup("java:global/Competro/Competro-ejb/ClienteDAO");
+            ProdutoRepository produtoEjb =(ProdutoRepository) context.lookup("java:global/Competro/Competro-ejb/ProdutoDAO");
+            FornecedorRepository fornecedorEjb = (FornecedorRepository) context.lookup("java:global/Competro/Competro-ejb/FornecedorDAO");
+            CompraRepository compraEjb = (CompraRepository) context.lookup("java:global/Competro/Competro-ejb/CompraDAO");
+            VendaRepository vendaEjb = (VendaRepository) context.lookup("java:global/Competro/Competro-ejb/VendaDAO");
+            UsuarioRepository usuarioEjb = (UsuarioRepository) context.lookup("java:global/Competro/Competro-ejb/UsuarioDAO");
+            EnderecoRepository enderecoEjb = (EnderecoRepository) context.lookup("java:global/Competro/Competro-ejb/EnderecoDAO");
             
             Cliente cliente = new Cliente();
             cliente.setNome("Ariolano");
