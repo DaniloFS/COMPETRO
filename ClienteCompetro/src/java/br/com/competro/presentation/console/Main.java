@@ -32,7 +32,7 @@ public class Main {
             EnderecoRepository enderecoEjb = (EnderecoRepository) context.lookup("java:global/Competro/Competro-ejb/EnderecoDAO");
             
             Cliente cliente = new Cliente();
-            cliente.setNome("Ariolano");
+            cliente.setNome("Ary");
             cliente.setCpf("1212324354");
             clienteEjb.salvar(cliente);
             
