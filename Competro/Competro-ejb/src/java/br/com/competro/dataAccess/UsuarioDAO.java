@@ -8,6 +8,7 @@ import br.com.competro.domainModel.Usuario;
 import br.com.competro.domainModel.UsuarioRepository;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.persistence.Query;
 
 /**
  *
@@ -20,8 +21,9 @@ public class UsuarioDAO extends DAOGenerico<Usuario> implements UsuarioRepositor
         super(Class.class);
     }
     @Override
-    public List<Usuario> listaUsuario() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<Usuario> listaUsuario(String login) {
+        Query sql = (Query) maneger.createQuery("SELECT u FROM Usuario u where u.login like '%"+login+"%'");
+        return sql.getResultList();
     }
     
 }

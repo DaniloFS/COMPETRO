@@ -32,19 +32,31 @@ public class Main {
             EnderecoRepository enderecoEjb = (EnderecoRepository) context.lookup("java:global/Competro/Competro-ejb/EnderecoDAO");
             
             Cliente cliente = new Cliente();
-            cliente.setNome("Ary");
+            cliente.setNome("Hugo");
             cliente.setCpf("1212324354");
+            
+            cliente.setNumero("457");
+            cliente.setRua("Putigen");
+            cliente.setBairro("Sion");
+            cliente.setCidade("Montes Claros");
+            cliente.setCep("39400-300");
+                        
             clienteEjb.salvar(cliente);
             
             Produto produto = new Produto();
            
-            produto.setDescricao("Oleo para motor");
-            produto.setValorUnitario(2);
+            produto.setDescricao("Graxo");
+            produto.setValorUnitario(10);
             produtoEjb.salvar(produto);
             
             Fornecedor fornecedor = new Fornecedor();
             fornecedor.setNome("Petrobraz");
             fornecedor.setCnpj("412514265234");
+            fornecedor.setNumero("1");
+            fornecedor.setRua("SantoAgostinho");
+            fornecedor.setBairro("JK");
+            fornecedor.setCidade("MOC");
+            fornecedor.setCep("39400-000");
             fornecedorEjb.salvar(fornecedor);
             
             Usuario usuario = new Usuario();
@@ -56,14 +68,6 @@ public class Main {
             Compra compra = new Compra();
             
             Venda venda = new Venda();
-            
-            Endereco endereco = new Endereco();
-            endereco.setNumero("123");
-            endereco.setRua("nove");
-            endereco.setBairro("dez");
-            endereco.setCidade("Montes Claros");
-            endereco.setCep("21323621");
-            enderecoEjb.salvar(endereco);
             
             
         } catch (NamingException e) {

@@ -11,7 +11,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table (name="fornecedores")
-public class Fornecedor implements Serializable {
+//public class Fornecedor implements Serializable {
+public class Fornecedor extends Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

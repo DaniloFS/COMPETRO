@@ -18,7 +18,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table (name = "Clientes")
-public class Cliente implements Serializable {
+//public class Cliente extends Enderco implements Serializable {
+//public class Cliente implements Serializable {
+//colocar essa linha em endereco @Inheritance (strategy = InheritanceType.JOINED)
+public class Cliente extends Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
