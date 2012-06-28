@@ -14,10 +14,10 @@
             <h3>Cadastro de Produtos</h3>
             <h:form>
                 <h:outputLabel value="Nome:"/>
-                <p:inputText id="nome"/><br /><br />
+                <p:inputText id="nome" value="#{produtoBean.descricao}"/><br /><br />
                 <h:outputLabel value="Valor Unitario:"/>
-                <p:inputText id="valor"/><br />
-                <h:commandButton action="#" value="Salvar" id="salvarProduto"/>
+                <p:inputText id="valor" value="#{produtoBean.valor}"/><br />
+                <h:commandButton action="#{produtoBean.salvar()}" value="Salvar" id="salvarProduto"/>
             </h:form>
         </div>
         <ui:include src="rodape.xhtml"/>

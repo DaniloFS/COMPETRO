@@ -13,22 +13,22 @@
             <h3>Cadastro de Forncedores</h3>
             <h:form>
                 <h:outputLabel value="Nome:"/>
-                <p:inputText id="nome" value=""/><br /><br />
+                <p:inputText id="nome" value="#{fornecedorBean.nome}"/><br /><br />
                 <h:outputLabel value="CNPJ:"/>
-                <p:inputText id="cnpj" value=""/>
+                <p:inputText id="cnpj" value="#{fornecedorBean.cnpj}"/>
                 
                 <h4>Endereco</h4>
                 <h:outputLabel value="Rua:"/>
-                <p:inputText id="rua" value=""/><br /><br />
+                <p:inputText id="rua" value="#{fornecedorBean.rua}"/><br /><br />
                 <h:outputLabel value="Numero:"/>
-                <p:inputText id="numero" value=""/><br /><br />
+                <p:inputText id="numero" value="#{fornecedorBean.numero}"/><br /><br />
                 <h:outputLabel value="Bairro:"/>
-                <p:inputText id="bairro" value=""/><br /><br />
+                <p:inputText id="bairro" value="#{fornecedorBean.bairro}"/><br /><br />
                 <h:outputLabel value="Cidade:"/>
-                <p:inputText id="cidade" value=""/><br /><br />
+                <p:inputText id="cidade" value="#{fornecedorBean.cidade}"/><br /><br />
                 <h:outputLabel value="CEP:"/>
-                <p:inputMask mask="39-400023" id="cep" value=""/><br />
-                <h:commandButton action="#" value="Salvar" id="salvarFornecedor"/>
+                <p:inputMask mask="39-400023" id="cep" value="#{fornecedorBean.cep}"/><br />
+                <h:commandButton action="#{fornecedorBean.salvar()}" value="Salvar" id="salvarFornecedor"/>
             </h:form>
         </div>
         <ui:include src="rodape.xhtml"/> 
