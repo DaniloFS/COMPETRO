@@ -13,5 +13,7 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface UsuarioRepository extends Repository<Usuario> {
+    
     List<Usuario> listaUsuario(String login);
+    Usuario buscarPorLogin(String login);
 }

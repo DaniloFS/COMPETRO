@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.competro.dataAccess;
 
 import br.com.competro.domainModel.Usuario;
@@ -22,8 +18,15 @@ public class UsuarioDAO extends DAOGenerico<Usuario> implements UsuarioRepositor
     }
     @Override
     public List<Usuario> listaUsuario(String login) {
-        Query sql = (Query) maneger.createQuery("SELECT u FROM Usuario u where u.login like '%"+login+"%'");
+        Query sql = (Query) maneger.createQuery("select u from Usuario u where u.login = :p");
+        sql.setParameter("p", login);
         return sql.getResultList();
     }
-    
+
+    @Override
+    public Usuario buscarPorLogin(String login) {
+        Query sql = (Query) maneger.createQuery("select u from Usuario u where u.login = :p");
+        sql.setParameter("p", login);
+        return (Usuario) sql.getSingleResult();
+    }    
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  * @author Danilo
@@ -40,7 +41,8 @@ public class DAOGenerico<T> implements Repository<T> {
 
     @Override
     public  List<T> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Query sql = maneger.createQuery("Select T from T");
+        return sql.getResultList();
     }
 
 }
