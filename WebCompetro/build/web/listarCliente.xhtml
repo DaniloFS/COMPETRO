@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:include src="cabecalho.xhtml"/>
+        <h:form prependId="false">
+
+            <p:dataTable id="dataTable" var="car" value="#{clienteBean.buscar()}"
+                 paginator="true" rows="10"
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                 rowsPerPageTemplate="5,10,15">
+        <f:facet name="header">
+            Listar Cliente
+        </f:facet>
+
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Codigo" />
+            </f:facet>
+            <h:outputText value="#{clienteBean.id}" />
+        </p:column>
+
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Nome" />
+            </f:facet>
+            <h:outputText value="#{clienteBean.nome}" />
+        </p:column>
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="CPF" />
+            </f:facet>
+            <h:outputText value="#{clienteBean.cpf}" />
+        </p:column>
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Rua" />
+            </f:facet>
+            <h:outputText value="#{clienteBean.rua}" />
+        </p:column>
+
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Numero" />
+            </f:facet>
+            <h:outputText value="#{clienteBean.numero}" />
+        </p:column>
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Bairro" />
+            </f:facet>
+            <h:outputText value="#{clienteBean.bairro}" />
+        </p:column>
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Cidade" />
+            </f:facet>
+            <h:outputText value="#{clienteBean.cidade}" />
+        </p:column>
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="CEP" />
+            </f:facet>
+            <h:outputText value="#{clienteBean.cep}" />
+        </p:column>
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Ação" />
+            </f:facet>
+            <h:commandButton action="#" value="Editar"/>
+            <h:commandButton action="#" value="Excluir"/>
+        </p:column>
+    </p:dataTable>
+
+</h:form>
+        <ui:include src="rodape.xhtml"/>
+    </h:body>
+</html>
+
