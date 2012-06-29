@@ -24,5 +24,10 @@ public class VendaDAO extends DAOGenerico<Venda> implements VendaRepository{
     public List<Venda> listaVendasPorMes() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    @Override
+    public List<Venda> listarTodos() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

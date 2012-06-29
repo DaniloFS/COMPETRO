@@ -31,5 +31,10 @@ public class EnderecoDAO extends DAOGenerico<Endereco> implements EnderecoReposi
         Query sql = (Query) maneger.createQuery("SELECT e FROM Endereco e join Fornecedor c ");
         return sql.getResultList();
     }
+
+    @Override
+    public List<Endereco> listarTodos() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

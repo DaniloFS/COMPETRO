@@ -26,5 +26,10 @@ public class CompraDAO extends DAOGenerico<Compra> implements CompraRepository {
         Query sql = (Query) maneger.createQuery("SELECT c FROM Compra c order by c.data");
         return sql.getResultList();
     }
+
+    @Override
+    public List<Compra> listarTodos() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

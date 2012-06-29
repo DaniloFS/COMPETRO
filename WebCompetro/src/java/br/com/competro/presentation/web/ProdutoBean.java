@@ -23,8 +23,17 @@ public class ProdutoBean implements Serializable {
     @EJB
     ProdutoRepository repo;
     
+    private Long id;
     private String descricao;
     private float valor;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getDescricao() {
         return descricao;
@@ -54,6 +63,13 @@ public class ProdutoBean implements Serializable {
         pro.setDescricao(descricao);
         pro.setValorUnitario(valor);
         repo.salvar(pro);
+    }
+    public void listar(){
+        Produto p = new Produto();
+        id = p.getId();
+        descricao = p.getDescricao();
+        valor = p.getValorUnitario();
+        repo.listarTodos();
     }
     
 }

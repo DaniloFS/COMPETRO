@@ -24,10 +24,18 @@ public class usuarioBean implements Serializable {
     @EJB
     UsuarioRepository repo;
     
+    private Long id;
     private String nome;
     private String login;
     private String senha;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getLogin() {
         return login;
     }
@@ -66,6 +74,13 @@ public class usuarioBean implements Serializable {
        usu.setLogin(login);
        usu.setSenha(crip);
        repo.salvar(usu);
+   }
+   public void listar(){
+       Usuario u = new Usuario();
+       id = u.getId();
+       nome = u.getNome();
+       login = u.getLogin();
+       repo.listarTodos();
    }
    public String criptografa(String senha)
     {

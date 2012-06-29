@@ -8,6 +8,7 @@ import br.com.competro.domainModel.Fornecedor;
 import br.com.competro.domainModel.FornecedorRepository;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.persistence.Query;
 
 /**
  *
@@ -22,6 +23,12 @@ public class FornecedorDAO extends DAOGenerico<Fornecedor> implements Fornecedor
     @Override
     public List<Fornecedor> listarFonercedorPorProduto() {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Fornecedor> listarTodos() {
+        Query sql = maneger.createQuery("SELECT f FROM Fornecedor");
+        return sql.getResultList();
     }
     
 }

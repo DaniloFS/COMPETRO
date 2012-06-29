@@ -8,6 +8,7 @@ import br.com.competro.domainModel.Produto;
 import br.com.competro.domainModel.ProdutoRepository;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.persistence.Query;
 
 /**
  *
@@ -22,6 +23,12 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
     @Override
     public List<Produto> listarProdutoEstocado() {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Produto> listarTodos() {
+        Query sql = maneger.createQuery("SELECT p FROM Produto");
+        return sql.getResultList();
     }
     
 }

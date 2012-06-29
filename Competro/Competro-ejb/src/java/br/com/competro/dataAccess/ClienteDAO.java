@@ -23,4 +23,10 @@ public class ClienteDAO extends DAOGenerico<Cliente> implements ClienteRepositor
         return sql.getResultList();
     }
 
+    @Override
+    public List<Cliente> listarTodos() {
+        Query sql = maneger.createQuery("SELECT c FROM Cliente");
+        return sql.getResultList();
+    }
+
 }

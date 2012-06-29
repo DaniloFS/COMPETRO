@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:ui="http://primefaces.prime.com.tr/ui">
+    <h:head>
+        <title>Listar Produto</title>
+    </h:head>
+    <h:body>
+        <p:dataTable id="dataTable" var="car" value="#{produtoBean.listar()}"
+                 paginator="true" rows="10"
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                 rowsPerPageTemplate="5,10,15">
+        <f:facet name="header">
+            Listar Produtos
+        </f:facet>
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Codigo" />
+            </f:facet>
+            <h:outputText value="#{produtoBean.id}" />
+        </p:column>
+
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Nome" />
+            </f:facet>
+            <h:outputText value="#{produtoBean.descricao}" />
+        </p:column>
+
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Valor Unitario" />
+            </f:facet>
+            <h:outputText value="#{produtoBean.valor}" />
+        </p:column>
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="ACAO" />
+            </f:facet>
+                <h:commandButton action="#" value="Editar"/>
+                <h:commandButton action="#" value="Excluir"/>
+        </p:column>
+    </p:dataTable>
+    </h:body>
+</html>
+

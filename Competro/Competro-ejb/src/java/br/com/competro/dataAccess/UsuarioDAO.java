@@ -28,5 +28,11 @@ public class UsuarioDAO extends DAOGenerico<Usuario> implements UsuarioRepositor
         Query sql = (Query) maneger.createQuery("select u from Usuario u where u.login = :p");
         sql.setParameter("p", login);
         return (Usuario) sql.getSingleResult();
-    }    
+    }
+
+    @Override
+    public List<Usuario> listarTodos() {
+        Query sql = maneger.createQuery("SELECT u FROM Usuario");
+        return sql.getResultList();
+    }
 }

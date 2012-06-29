@@ -22,7 +22,7 @@ public class ClienteBean implements Serializable {
     @EJB
     ClienteRepository repo;
     
-    
+    private Long id;
     private String nome;
     private String cpf;
     private String rua;
@@ -30,6 +30,14 @@ public class ClienteBean implements Serializable {
     private String cidade;
     private String numero;
     private String cep;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getBairro() {
         return bairro;
@@ -107,6 +115,18 @@ public class ClienteBean implements Serializable {
         cli.setCep(cep);
         repo.salvar(cli);
     }
+    public void listar(){
+        Cliente c = new Cliente();
+        id = c.getId();
+        nome = c.getNome();
+        cpf = c.getCpf();
+        rua = c.getRua();
+        numero = c.getNumero();
+        bairro = c.getBairro();
+        cidade = c.getCidade();
+        cep = c.getCep();
+        repo.listarTodos();
+     }
 
     /**
      * Creates a new instance of ClienteBean

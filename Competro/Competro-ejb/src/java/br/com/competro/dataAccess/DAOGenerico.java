@@ -12,7 +12,7 @@ import javax.persistence.Query;
  * @author Ary
  * @author Hugo Santos
  */
-public class DAOGenerico<T> implements Repository<T> {
+public abstract class DAOGenerico<T> implements Repository<T> {
 
     public DAOGenerico() {
     }
@@ -40,9 +40,6 @@ public class DAOGenerico<T> implements Repository<T> {
     }
 
     @Override
-    public  List<T> listarTodos() {
-        Query sql = maneger.createQuery("Select T from T");
-        return sql.getResultList();
-    }
+    public abstract List<T> listarTodos();
 
 }

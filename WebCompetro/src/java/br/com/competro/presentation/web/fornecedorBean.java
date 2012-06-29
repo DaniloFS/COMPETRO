@@ -22,6 +22,7 @@ public class fornecedorBean implements Serializable {
     @EJB
     FornecedorRepository repo;
     
+    private Long id;
     private String nome;
     private String cnpj;
     private String rua;
@@ -29,6 +30,14 @@ public class fornecedorBean implements Serializable {
     private String cidade;
     private String numero;
     private String cep;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getBairro() {
         return bairro;
@@ -106,6 +115,18 @@ public class fornecedorBean implements Serializable {
         forn.setCep(cep);
         repo.salvar(forn);
     }
+     public void listar(){
+        Fornecedor f = new Fornecedor();
+        id = f.getId();
+        nome = f.getNome();
+        cnpj = f.getCnpj();
+        rua = f.getRua();
+        numero = f.getNumero();
+        bairro = f.getBairro();
+        cidade = f.getCidade();
+        cep = f.getCep();
+        repo.listarTodos();
+     }
     
     /**
      * Creates a new instance of fornecedorBean
