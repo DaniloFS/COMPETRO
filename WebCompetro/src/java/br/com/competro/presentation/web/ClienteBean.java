@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.com.competro.presentation.web;
 
 import br.com.competro.domainModel.Cliente;
@@ -16,9 +20,9 @@ import javax.inject.Named;
 public class ClienteBean implements Serializable {
 
     @EJB
-    ClienteRepository repo;    
+    ClienteRepository repo;
     
-    private Long id;
+    
     private String nome;
     private String cpf;
     private String rua;
@@ -27,13 +31,6 @@ public class ClienteBean implements Serializable {
     private String numero;
     private String cep;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
     public String getBairro() {
         return bairro;
     }
@@ -110,19 +107,10 @@ public class ClienteBean implements Serializable {
         cli.setCep(cep);
         repo.salvar(cli);
     }
-    public void buscar(){
-        Cliente c = new Cliente();
-        id = c.getId();
-        nome = c.getNome();
-        cpf = c.getCpf();
-        rua = c.getRua();
-        numero = c.getNumero();
-        bairro = c.getBairro();
-        cidade = c.getCidade();
-        cep = c.getCep();
-        repo.listarTodos();
-    }
 
+    /**
+     * Creates a new instance of ClienteBean
+     */
     public ClienteBean() {
     }
 }

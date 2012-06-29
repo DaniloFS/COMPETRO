@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.com.competro.presentation.web;
 
 import br.com.competro.domainModel.Usuario;
@@ -16,6 +20,7 @@ import javax.ejb.EJB;
 @Named(value = "loginBean")
 @SessionScoped
 public class LoginBean implements Serializable {
+
      
     @EJB
     UsuarioRepository repo;
@@ -42,16 +47,16 @@ public class LoginBean implements Serializable {
     public String Acessar(){
     
       String log = this.login;
-      Usuario usu = repo.buscarPorLogin(log);
+      Usuario usu = (Usuario) repo.listaUsuario(log);
       
       String crip = criptografa(this.senha);
        
       if(usu.getSenha() == crip){
           
-          return "conteudo.xhtml";          
+          return "conteudo.xhtml";
           
       }else{
-          return "index.xhtml";
+          return "";
       }
       
     }
@@ -84,6 +89,9 @@ public class LoginBean implements Serializable {
         return buf.toString();
     }  
 
+    /**
+     * Creates a new instance of LoginBean
+     */
     public LoginBean() {
     }
 }

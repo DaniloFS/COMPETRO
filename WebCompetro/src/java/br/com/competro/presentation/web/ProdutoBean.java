@@ -13,7 +13,7 @@ import javax.ejb.EJB;
  * @author Ary
  * @author Hugo
  */
-@Named(value = "beanProduto")
+@Named(value = "produtoBean")
 @SessionScoped
 public class ProdutoBean implements Serializable {
     
@@ -24,7 +24,7 @@ public class ProdutoBean implements Serializable {
     ProdutoRepository repo;
     
     private String descricao;
-    private float valorUbitario;
+    private float valor;
 
     public String getDescricao() {
         return descricao;
@@ -42,18 +42,18 @@ public class ProdutoBean implements Serializable {
         this.repo = repo;
     }
 
-    public float getValorUbitario() {
-        return valorUbitario;
+    public float getValor() {
+        return valor;
     }
 
-    public void setValorUbitario(float valorUbitario) {
-        this.valorUbitario = valorUbitario;
+    public void setValor(float valor) {
+        this.valor = valor;
+    }
+    public void salvar(){
+        Produto pro = new Produto();
+        pro.setDescricao(descricao);
+        pro.setValorUnitario(valor);
+        repo.salvar(pro);
     }
     
-    public void salvar(){
-        Produto p = new Produto();
-        p.setDescricao(descricao);
-        p.setValorUnitario(valorUbitario);
-        repo.salvar(p);
-    }
 }

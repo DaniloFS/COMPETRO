@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.com.competro.presentation.web;
 
 import br.com.competro.domainModel.Fornecedor;
@@ -9,15 +13,12 @@ import javax.ejb.EJB;
 
 /**
  *
- * @author Ary
+ * @author Hugo Santos
  */
 @Named(value = "fornecedorBean")
 @SessionScoped
-public class FornecedorBean implements Serializable {
-    
-    public FornecedorBean() {
-    }
-    
+public class fornecedorBean implements Serializable {
+
     @EJB
     FornecedorRepository repo;
     
@@ -92,16 +93,23 @@ public class FornecedorBean implements Serializable {
     public void setRua(String rua) {
         this.rua = rua;
     }
-    
+
     public void salvar(){
-        Fornecedor f = new Fornecedor();
-        f.setNome(nome);
-        f.setCnpj(cnpj);
-        f.setRua(rua);
-        f.setNumero(numero);
-        f.setBairro(bairro);
-        f.setCidade(cidade);
-        f.setCep(cep);
-        repo.salvar(f);
+        Fornecedor forn = new Fornecedor();
+        
+        forn.setNome(nome);
+        forn.setCnpj(cnpj);
+        forn.setNumero(numero);
+        forn.setRua(rua);
+        forn.setBairro(bairro);
+        forn.setCidade(cidade);
+        forn.setCep(cep);
+        repo.salvar(forn);
+    }
+    
+    /**
+     * Creates a new instance of fornecedorBean
+     */
+    public fornecedorBean() {
     }
 }
